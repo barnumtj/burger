@@ -1,0 +1,56 @@
+body {
+    background-color: royalblue;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.1rem;
+
+}
+
+#devour {
+    display: grid;
+    position: absolute;
+    top: 5rem;
+    right: 10rem;
+}
+
+#submitform {
+    position: absolute;
+    left: 28rem;
+    top: 4rem;
+}
+
+#buttons {
+    width: 200px;
+    padding-left: 6rem;
+}
+
+.form-control {
+    padding: 5px;
+    margin: 5px;
+
+}
+
+#devourBtn {
+    position: relative;
+    top: -.7rem;
+    
+}
+
+.col-xs-9 {
+    margin-top: -14px;
+}
+
+.inputSize {
+    padding: 4rem;
+    font-size: 2.5rem;
+    width: 10rem;
+    height: 0rem;
+}
+
+#text-enter-button {
+    position: relative;
+    top: 5rem;
+    left: -11.5rem;
+}

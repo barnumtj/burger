@@ -4,6 +4,7 @@ var burger = {
     all: function(callback){
         orm.all('burgers', function(res){
             callback(res);
+            
     
         })
     },

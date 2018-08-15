@@ -1,9 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <title>Eat Da Burger</title>
+</head>
+<body>
+    
+
+
 <div class="container">
     <div class="row">
         <div class="col-xs-12 text-center" id="top-bar">
             <h1>EAT DA BURGER!</h1>
         </div>
-        <div class="col-xs-6 text-center" class="task">
+        <div id="buttons" class="col-xs-3 text-center" class="task">
             <div class="row">
                 {{#each burgerData}} {{#unless this.devoured}}
                 <div class="col-xs-9 text-center">
@@ -11,9 +25,9 @@
                 </div>
                 <div class="col-xs-3 text-center">
                     <form method="POST" action="/burgers/update?_method=PUT" class="button-size">
-                        <input type="hidden" name="burger_id" type="text" value={{this.id}}>
-                        <br>
-                        <button type="submit" class="btn btn-default">
+                        <input  type="hidden" name="burger_id" type="text" value={{this.id}}>
+                        
+                        <button id="devourBtn" type="submit" class="btn btn-default">
                             DEVOUR IT!
                         </button>
                     </form>
@@ -22,7 +36,7 @@
                 {{/each}}
             </div>
         </div>
-        <div class="col-xs-6 text-center" class="task">
+        <div id="devour" class="col-xs-6 text-center" class="task">
             {{#each burgerData}}
                 {{#if this.devoured}}
                     <input class="form-control" type="text" placeholder="{{this.id}}. {{this.burger_name}}" readonly>
@@ -32,17 +46,20 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
+<div id="submitform" class="container">
+    <div class="">
         <div class="col-xs-12 text-center enter_section">
             <form action="/burgers/create" method="POST">
-                <input type="text" name="burger_name" class="form-control"
+                <input type="text" name="burger_name" class="form-control inputSize"
                 value="" id="enter_text">
-                <button type="submit" class="btn btn-primary" id="text-enter-button">
+                <button  type="submit" class="btn btn-primary" id="text-enter-button">
                     SUBMIT
                 </button>
             </form>
-                <p>Enter a burger</p>
+                {{!-- <p>Enter a burger</p> --}}
         </div>
     </div>
 </div>
+
+</body>
+</html>
